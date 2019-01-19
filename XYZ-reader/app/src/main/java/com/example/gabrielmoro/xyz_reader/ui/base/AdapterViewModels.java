@@ -10,5 +10,5 @@ public interface AdapterViewModels<T> {
 
     void setup(T item);
 
-    void click(View view);
+    void onClick(View view);
 }

@@ -1,15 +1,13 @@
 package com.example.gabrielmoro.xyz_reader.ui.mainScreen.adapter;
 
-import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
-import android.support.annotation.NonNull;
 import android.view.View;
 
 import com.example.gabrielmoro.xyz_reader.BR;
 import com.example.gabrielmoro.xyz_reader.model.XyzReaderJson;
 import com.example.gabrielmoro.xyz_reader.ui.base.AdapterViewModels;
+import com.example.gabrielmoro.xyz_reader.ui.mainScreen.detailScreen.DetailActivity;
 
 public class XYZViewModel extends BaseObservable implements AdapterViewModels<XyzReaderJson> {
 
@@ -24,8 +22,8 @@ public class XYZViewModel extends BaseObservable implements AdapterViewModels<Xy
     }
 
     @Override
-    public void click(View view) {
-
+    public void onClick(View view) {
+        DetailActivity.startActivity(view.getContext(), item);
     }
 
     @Bindable
