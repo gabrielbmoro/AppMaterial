@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">XYZ-reader</string>
+    <string name="imageContentDescription">Image used for each item</string>
 </resources>

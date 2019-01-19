@@ -19,7 +19,7 @@ import java.util.List;
  */
 public abstract class GeneralBaseAdapter<T> extends RecyclerView.Adapter<GeneralViewHolder> {
 
-    private List<T> elements;
+    protected List<T> elements;
 
     public GeneralBaseAdapter(@NonNull List<T> aLstElements) {
         elements = aLstElements;
@@ -40,8 +40,8 @@ public abstract class GeneralBaseAdapter<T> extends RecyclerView.Adapter<General
     @Override
     public void onBindViewHolder(@NonNull GeneralViewHolder generalViewHolder, int i) {
         ViewDataBinding binding = DataBindingUtil.getBinding(generalViewHolder.itemView);
-       // if (binding != null)
-           // binding.setVariable(BR.viewModel, elements.get(i));
+        if (binding != null)
+            binding.setVariable(BR.viewModel, elements.get(i));
     }
 
 
