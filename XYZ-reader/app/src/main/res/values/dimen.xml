@@ -8,7 +8,7 @@
     <dimen name="cardViewTextMargin">18dp</dimen>
     <dimen name="imageCardViewHeight">180dp</dimen>
     <dimen name="cardImageViewMarginTop">10dp</dimen>
-    <dimen name="cardImageViewMarginBottom">4dp</dimen>
+    <dimen name="cardImageViewMarginBottom">12dp</dimen>
     <dimen name="cardImageViewMarginLeftAndRight">4dp</dimen>
 
 </resources>

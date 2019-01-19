@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -11,10 +12,12 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="@dimen/cardViewHeight"
+        android:layout_height="wrap_content"
+        android:clickable="true"
         android:layout_margin="@dimen/cardViewMargin"
         app:cardCornerRadius="@dimen/cardViewRadius"
-        app:cardElevation="@dimen/cardViewElevation">
+        app:cardElevation="@dimen/cardViewElevation"
+        android:focusable="true">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -29,9 +32,9 @@
                 android:layout_marginTop="@dimen/cardImageViewMarginTop"
                 android:layout_marginEnd="@dimen/cardImageViewMarginLeftAndRight"
                 android:layout_marginBottom="@dimen/cardImageViewMarginBottom"
+                android:contentDescription="@string/imageContentDescription"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_card_test"
-                android:contentDescription="@string/imageContentDescription" />
+                android:src="@drawable/image_card_test" />
 
             <TextView
                 style="@style/TextAppearance.CardView.Caption"
@@ -39,7 +42,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_margin="@dimen/cardViewTextMargin"
-                android:text="@{viewModel.title}" />
+                android:text="@{viewModel.title}"
+                tools:text="Item 0" />
+
+            <FrameLayout
+                android:id="@+id/flSurfaceUsedToShadow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorShadow">
+
+            </FrameLayout>
 
         </FrameLayout>
 

@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -26,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         final ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        binding.rvXYZItems.setLayoutManager(llm);
+        StaggeredGridLayoutManager sglm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        binding.rvXYZItems.setLayoutManager(sglm);
 
         binding.setViewModel(new MainViewModel());
 
