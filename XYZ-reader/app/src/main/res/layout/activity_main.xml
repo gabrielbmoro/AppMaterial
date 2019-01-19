@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adapter="@{viewModel.adapterList}"
+            tools:listitem="@layout/view_holder_xyz_item"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <android.support.design.widget.AppBarLayout
@@ -27,6 +28,8 @@
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
+                app:title="@string/app_name"
+                app:titleTextColor="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlways" />
