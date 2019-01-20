@@ -10,6 +10,12 @@
             type="com.example.gabrielmoro.xyz_reader.ui.mainScreen.detailScreen.DetailViewModel" />
     </data>
 
+    <!--
+
+    Reference:
+    - https://saulmmsvgithub.io/mastering-coordinator
+
+    -->
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
