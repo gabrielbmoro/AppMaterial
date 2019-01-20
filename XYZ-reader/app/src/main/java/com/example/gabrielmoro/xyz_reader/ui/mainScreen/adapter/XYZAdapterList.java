@@ -19,6 +19,7 @@ public class XYZAdapterList extends GeneralBaseAdapter<XYZViewModel> {
         super(new ArrayList<XYZViewModel>());
 
         contract = contractArgument;
+
     }
 
     public void setup(List<XyzReaderJson> elementsArgument) {
@@ -27,6 +28,7 @@ public class XYZAdapterList extends GeneralBaseAdapter<XYZViewModel> {
             viewModel.setup(elementsArgument.get(i));
             elements.add(viewModel);
         }
+        notifyDataSetChanged();
     }
 
     @Override

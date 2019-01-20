@@ -1,5 +1,6 @@
 package com.example.gabrielmoro.xyz_reader.ui.mainScreen.adapter;
 
+import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.view.View;
@@ -15,6 +16,7 @@ public class XYZViewModel extends BaseObservable implements AdapterViewModels<Xy
     private XyzReaderJson item;
     private boolean wasImageRequested = false;
 
+
     @Override
     public void setup(XyzReaderJson itemArgument) {
         item = itemArgument;
@@ -23,6 +25,7 @@ public class XYZViewModel extends BaseObservable implements AdapterViewModels<Xy
 
     @Override
     public void onClick(View view) {
+        view.getContext().startActivity(new Intent(view.getContext(), DetailActivity.class));
         DetailActivity.startActivity(view.getContext(), item);
     }
 
@@ -36,15 +39,15 @@ public class XYZViewModel extends BaseObservable implements AdapterViewModels<Xy
         notifyPropertyChanged(BR.title);
     }
 
-    public String getURL() {
+    String getURL() {
         return item.getPhoto();
     }
 
-    public boolean isWasImageRequested() {
+    boolean isWasImageRequested() {
         return wasImageRequested;
     }
 
-    public void setWasImageRequested(boolean wasImageRequested) {
+    void setWasImageRequested(boolean wasImageRequested) {
         this.wasImageRequested = wasImageRequested;
     }
 

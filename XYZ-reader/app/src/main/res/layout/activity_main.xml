@@ -15,24 +15,30 @@
         android:layout_height="match_parent"
         tools:context=".ui.mainScreen.MainActivity">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvXYZItems"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/srSwipeRefreshComponent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:adapter="@{viewModel.adapterList}"
-            tools:listitem="@layout/view_holder_xyz_item"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvXYZItems"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adapter="@{viewModel.adapterList}"
+                tools:listitem="@layout/view_holder_xyz_item" />
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.Toolbar
-                app:title="@string/app_name"
-                app:titleTextColor="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways" />
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:title="@string/app_name"
+                app:titleTextColor="@android:color/white" />
         </android.support.design.widget.AppBarLayout>
 
     </android.support.design.widget.CoordinatorLayout>

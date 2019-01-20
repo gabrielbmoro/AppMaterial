@@ -10,5 +10,8 @@
     <dimen name="cardImageViewMarginTop">10dp</dimen>
     <dimen name="cardImageViewMarginBottom">12dp</dimen>
     <dimen name="cardImageViewMarginLeftAndRight">4dp</dimen>
-
+    <dimen name="buttonWidth">42dp</dimen>
+    <dimen name="buttonHeight">42dp</dimen>
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

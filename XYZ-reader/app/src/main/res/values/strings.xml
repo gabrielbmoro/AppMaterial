@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">XYZ-reader</string>
     <string name="imageContentDescription">Image used for each item</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi feugiat scelerisque risus, non imperdiet eros euismod quis. Donec ac enim ac eros ultrices convallis. Curabitur convallis, mauris vitae pretium imperdiet, tortor elit facilisis dui, eget ullamcorper ipsum elit porttitor lorem. Phasellus non tellus molestie, pulvinar dui in, mattis elit. Donec egestas iaculis neque id hendrerit. Quisque volutpat vel enim at volutpat. Maecenas semper lobortis volutpat. Suspendisse nec cursus velit. Nam molestie, lectus ac suscipit hendrerit, diam ligula iaculis nibh, aliquam pretium odio diam ac lectus. Aenean mattis quis enim ut gravida. Quisque eleifend sem enim, et finibus nunc auctor at. Phasellus nulla nibh, lobortis sit amet viverra et, congue vel sapien. Vivamus sed ante leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet scelerisque ex.</string>
 </resources>
