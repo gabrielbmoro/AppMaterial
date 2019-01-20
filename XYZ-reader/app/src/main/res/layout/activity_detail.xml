@@ -73,7 +73,20 @@
                     app:layout_collapseMode="pin"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:title="@{viewModel.getTitle()}"
-                    app:titleTextColor="@android:color/white" />
+                    app:titleTextColor="@android:color/white">
+
+                    <ImageButton
+                        android:id="@+id/ivBackButton"
+                        android:layout_width="@dimen/buttonWidth"
+                        android:layout_height="@dimen/buttonHeight"
+                        android:background="@drawable/back_button_shape_background"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="1dp"
+                        android:src="@drawable/ic_baseline_arrow_back"
+                        android:tint="@color/colorPrimary" />
+
+                </android.support.v7.widget.Toolbar>
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 

@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.example.gabrielmoro.xyz_reader.R;
 import com.example.gabrielmoro.xyz_reader.databinding.ActivityDetailBinding;
@@ -48,6 +49,13 @@ public class DetailActivity extends AppCompatActivity {
             viewModel.setImageUrl(url);
             setupImageView(viewModel.getImageUrl());
         }
+
+        binding.ivBackButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
