@@ -19,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
     public static String SUB_TITLE_INTENT_KEY = "Subtitle";
     public static String BODY_ÌNTENT_KEY = "Body";
     public static String URL_INTENT_KEY = "Url";
+    public static final int STRING_BUFFER_LIMIT = 62000;
 
     private ActivityDetailBinding binding;
 
@@ -60,10 +61,18 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public static void startActivity(Context context, XyzReaderJson xyzReaderJsonSelected) {
+        /*
+         * To avoid the TransactionTooLargeException
+         */
+        String body = UIServices.removingNewLines(xyzReaderJsonSelected.getBody());
+        if (body.length() > STRING_BUFFER_LIMIT - 3) {
+            body = body.substring(0, STRING_BUFFER_LIMIT - 3) + "...";
+        }
+
         Intent intentAction = new Intent(context, DetailActivity.class);
         intentAction.putExtra(TITLE_INTENT_KEY, xyzReaderJsonSelected.getTitle());
         intentAction.putExtra(SUB_TITLE_INTENT_KEY, xyzReaderJsonSelected.getAuthor());
-        intentAction.putExtra(BODY_ÌNTENT_KEY, UIServices.removingNewLines(xyzReaderJsonSelected.getBody()));
+        intentAction.putExtra(BODY_ÌNTENT_KEY, body);
         intentAction.putExtra(URL_INTENT_KEY, xyzReaderJsonSelected.getPhoto());
         context.startActivity(intentAction);
     }
