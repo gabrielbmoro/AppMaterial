@@ -23,12 +23,13 @@ public class DetailActivity extends AppCompatActivity {
     public static final int STRING_BUFFER_LIMIT = 62000;
 
     private ActivityDetailBinding binding;
+    private DetailViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        DetailViewModel viewModel = ViewModelProviders.of(this).get(DetailViewModel.class);
+        viewModel = ViewModelProviders.of(this).get(DetailViewModel.class);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detail);
         binding.setViewModel(viewModel);
 

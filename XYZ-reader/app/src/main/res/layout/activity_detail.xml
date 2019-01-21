@@ -27,6 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_horizontal_margin"
+            android:onClick="@{v -> viewModel.onClick(v)}"
             android:src="@android:drawable/ic_menu_share"
             app:layout_anchor="@id/mainAppbar"
             app:layout_anchorGravity="bottom|right|end" />
@@ -84,7 +85,7 @@
                         android:focusable="true"
                         android:padding="1dp"
                         android:src="@drawable/ic_baseline_arrow_back"
-                        android:tint="@color/colorPrimary"/>
+                        android:tint="@color/colorPrimary" />
 
                 </android.support.v7.widget.Toolbar>
             </android.support.design.widget.CollapsingToolbarLayout>

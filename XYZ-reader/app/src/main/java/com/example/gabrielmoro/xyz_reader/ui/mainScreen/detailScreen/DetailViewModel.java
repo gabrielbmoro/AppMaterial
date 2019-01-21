@@ -2,7 +2,9 @@ package com.example.gabrielmoro.xyz_reader.ui.mainScreen.detailScreen;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.view.View;
 
 public class DetailViewModel extends AndroidViewModel {
 
@@ -16,12 +18,24 @@ public class DetailViewModel extends AndroidViewModel {
         super(application);
     }
 
+    /*
+      Reference:
+      - https://developer.android.com/training/sharing/send#java
+       */
+    public void onClick(View view) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        String content = title + "\n\n" + body;
+        sendIntent.putExtra(Intent.EXTRA_TEXT, content);
+        sendIntent.setType("text/plain");
+        view.getContext().startActivity(sendIntent);
+    }
 
-    public String getImageUrl() {
+    String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
+    void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
@@ -33,11 +47,7 @@ public class DetailViewModel extends AndroidViewModel {
         this.title = title;
     }
 
-    public String getSubTitle() {
-        return subTitle;
-    }
-
-    public void setSubTitle(String subTitle) {
+    void setSubTitle(String subTitle) {
         this.subTitle = subTitle;
     }
 
@@ -45,7 +55,7 @@ public class DetailViewModel extends AndroidViewModel {
         return body;
     }
 
-    public void setBody(String body) {
+    void setBody(String body) {
         this.body = body;
     }
 }
