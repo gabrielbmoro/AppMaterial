@@ -3,11 +3,11 @@ package com.example.gabrielmoro.xyz_reader.ui.mainScreen;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.example.gabrielmoro.xyz_reader.R;
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
             @Override
             public void onFailure(Throwable problem) {
+                Snackbar.make(binding.getRoot(), getString(R.string.error_message), Snackbar.LENGTH_LONG).show();
             }
 
             @Override
