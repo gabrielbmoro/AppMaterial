@@ -47,6 +47,10 @@ public class DetailViewModel extends AndroidViewModel {
         this.title = title;
     }
 
+    public String getSubTitle() {
+        return subTitle;
+    }
+
     void setSubTitle(String subTitle) {
         this.subTitle = subTitle;
     }

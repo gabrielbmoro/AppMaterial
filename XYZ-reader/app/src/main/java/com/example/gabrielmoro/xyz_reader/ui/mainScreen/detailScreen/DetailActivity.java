@@ -69,7 +69,7 @@ public class DetailActivity extends AppCompatActivity {
         UIServices.loadImageUsingGlide(this, url, binding.mainBackdrop);
     }
 
-    public static void startActivity(Context context, XyzReaderJson xyzReaderJsonSelected) {
+    public static void startActivity(final Context context, XyzReaderJson xyzReaderJsonSelected) {
         /*
          * To avoid the TransactionTooLargeException
          */
@@ -83,6 +83,7 @@ public class DetailActivity extends AppCompatActivity {
         intentAction.putExtra(SUB_TITLE_INTENT_KEY, xyzReaderJsonSelected.getAuthor());
         intentAction.putExtra(BODY_ÌNTENT_KEY, body);
         intentAction.putExtra(URL_INTENT_KEY, xyzReaderJsonSelected.getPhoto());
+
         context.startActivity(intentAction);
     }
 

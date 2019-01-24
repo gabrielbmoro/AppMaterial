@@ -103,6 +103,16 @@
 
 
                 <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    style="@style/TextAppearance.Display"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    tools:text="Title iajsdijasidj"
+                    android:text="@{viewModel.subTitle}"/>
+
+                <TextView
+                    android:id="@+id/tvDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:lineSpacingExtra="8dp"

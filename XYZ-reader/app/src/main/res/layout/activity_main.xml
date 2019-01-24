@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:title="@string/app_name"
+                android:id="@+id/toolbar"
                 app:titleTextColor="@android:color/white" />
         </android.support.design.widget.AppBarLayout>
 
