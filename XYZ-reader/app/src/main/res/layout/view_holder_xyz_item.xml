@@ -18,6 +18,7 @@
         android:layout_margin="@dimen/cardViewMargin"
         android:clickable="true"
         android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         android:onClick="@{v-> viewModel.onClick(v)}"
         app:cardCornerRadius="@dimen/cardViewRadius"
         app:cardElevation="@dimen/cardViewElevation">
@@ -31,14 +32,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/imageCardViewHeight"
                 android:layout_gravity="center"
-                android:layout_marginStart="@dimen/cardImageViewMarginLeftAndRight"
-                android:layout_marginTop="@dimen/cardImageViewMarginTop"
-                android:layout_marginEnd="@dimen/cardImageViewMarginLeftAndRight"
-                android:layout_marginBottom="@dimen/cardImageViewMarginBottom"
                 android:contentDescription="@string/imageContentDescription"
-                android:scaleType="centerCrop"
-                android:transitionName="@string/transition_photo"
-                android:src="@drawable/image_card_test" />
+                android:scaleType="matrix"
+                android:src="@drawable/image_card_test"
+                android:transitionName="@string/transition_photo" />
 
             <TextView
                 style="@style/TextAppearance.CardView.Caption"
