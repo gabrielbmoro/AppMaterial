@@ -37,6 +37,7 @@
                 android:layout_marginBottom="@dimen/cardImageViewMarginBottom"
                 android:contentDescription="@string/imageContentDescription"
                 android:scaleType="centerCrop"
+                android:transitionName="@string/transition_photo"
                 android:src="@drawable/image_card_test" />
 
             <TextView

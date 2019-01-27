@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.gabrielmoro.xyz_reader.BR;
+import com.example.gabrielmoro.xyz_reader.R;
 import com.example.gabrielmoro.xyz_reader.model.XyzReaderJson;
 import com.example.gabrielmoro.xyz_reader.ui.base.AdapterViewModels;
 import com.example.gabrielmoro.xyz_reader.ui.mainScreen.detailScreen.DetailActivity;
@@ -26,7 +28,8 @@ public class XYZViewModel extends BaseObservable implements AdapterViewModels<Xy
     @Override
     public void onClick(View view) {
         view.getContext().startActivity(new Intent(view.getContext(), DetailActivity.class));
-        DetailActivity.startActivity(view.getContext(), item);
+        ImageView sharedView = view.getRootView().findViewById(R.id.ivCardImage);
+        DetailActivity.startActivity(view.getContext(), item, sharedView);
     }
 
     @Bindable

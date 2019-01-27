@@ -1,13 +1,17 @@
 package com.example.gabrielmoro.xyz_reader.ui.mainScreen.detailScreen;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 
 import com.example.gabrielmoro.xyz_reader.R;
 import com.example.gabrielmoro.xyz_reader.databinding.ActivityDetailBinding;
@@ -69,7 +73,7 @@ public class DetailActivity extends AppCompatActivity {
         UIServices.loadImageUsingGlide(this, url, binding.mainBackdrop);
     }
 
-    public static void startActivity(final Context context, XyzReaderJson xyzReaderJsonSelected) {
+    public static void startActivity(final Context context, XyzReaderJson xyzReaderJsonSelected, ImageView sharedView) {
         /*
          * To avoid the TransactionTooLargeException
          */
@@ -84,6 +88,8 @@ public class DetailActivity extends AppCompatActivity {
         intentAction.putExtra(BODY_ÌNTENT_KEY, body);
         intentAction.putExtra(URL_INTENT_KEY, xyzReaderJsonSelected.getPhoto());
 
+        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation((Activity) context, sharedView, sharedView.getTransitionName()).toBundle();
+        intentAction.putExtras(bundle);
         context.startActivity(intentAction);
     }
 
